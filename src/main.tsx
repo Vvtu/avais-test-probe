@@ -2,7 +2,7 @@ import React from 'react';
 
 import ReactDOM from 'react-dom/client';
 
-import { App } from './app';
+import { App } from '@/app-component.tsx';
 
 import '../reset.d.ts';
 import './index.css';

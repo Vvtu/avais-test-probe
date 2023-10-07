@@ -10,6 +10,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['react-refresh', 'import', 'filename-rules'],
   rules: {
+    'filename-rules/match': ['error', /^([a-z,0-9]+-)*[a-z,0-9]+(?:\..*)?$/],
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     'no-shadow': ['error', { builtinGlobals: true }],
     'no-shadow-restricted-names': 'error',
@@ -46,11 +47,6 @@ module.exports = {
             position: 'before',
           },
           {
-            pattern: 'next*',
-            group: 'external',
-            position: 'before',
-          },
-          {
             pattern: 'react-query',
             group: 'external',
             position: 'before',
@@ -66,12 +62,7 @@ module.exports = {
             position: 'before',
           },
           {
-            pattern: '@material-ui',
-            group: 'external',
-            position: 'before',
-          },
-          {
-            pattern: '@material-ui/*',
+            pattern: '@mui/*',
             group: 'external',
             position: 'before',
           },

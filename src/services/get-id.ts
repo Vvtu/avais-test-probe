@@ -12,12 +12,12 @@ export async function getSystemId() {
 
 export async function getTickets(systemId: string) {
   if (!systemId) {
-    return Promise.reject([]);
+    return Promise.reject({ tickets: [], stop: true });
   }
   await delay(RESPONSE_DELAY);
 
   if (Math.random() < PROBABILITY_OF_ERROR) {
-    return Promise.reject([]);
+    return Promise.reject({ tickets: [], stop: false });
   }
 
   const ticketArrayLength = Math.trunc(Math.random() * 9.9999 + 1);
@@ -28,5 +28,5 @@ export async function getTickets(systemId: string) {
     ticket.price = Math.random() * 2000 + 200;
   }
 
-  return Promise.resolve(ticketArray);
+  return Promise.resolve({ tickets: ticketArray, stop: Math.random() < 0.1 });
 }

@@ -1,16 +1,13 @@
 import { useState, useEffect, useMemo } from 'react';
 
 import { useGetTickets } from '@/hooks/query-hooks';
+import Logo from '@/pages/icons/logo.svg';
 import { ITickets } from '@/services/ticket-validation-scheme';
 
-let renderCount = 0;
-
 export function App() {
-  console.log('[31m ------------ renderCount++ = ', renderCount++); //TODO - delete vvtu
-
   const [count, setCount] = useState(0);
   const result = useGetTickets();
-  console.log('[33m result = ', result); //TODO - delete vvtu
+  console.log('[31m ----------- result = ', result); //TODO - delete vvtu
 
   useEffect(() => {
     console.log('[33m result.hasNextPage = ', result.hasNextPage); //TODO - delete vvtu
@@ -30,11 +27,29 @@ export function App() {
     return arr;
   }, [result.data?.pages]);
 
+  const pagesSortedAndFiltered = useMemo(() => {
+    return [...allPages].sort((a, b) => {
+      if (a.price > b.price) {
+        return 1;
+      }
+
+      return -1;
+    });
+  }, [allPages]);
+
   console.log('[33m allPages = ', allPages); //TODO - delete vvtu
+  console.log('[33m pagesSortedAndFiltered = ', pagesSortedAndFiltered); //TODO - delete vvtu
 
   return (
-    <div>
-      <h1>Vite + React + Typescript +++</h1>
+    <div style={{ backgroundColor: '#F3F7FA', minHeight: 'calc(100vh - 100px)' }}>
+      <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+        <img src={Logo} alt="Logo icon" height={'60px'} />
+      </div>
+      <div style={{ height: 16, margin: '8px' }}>
+        {(result.isFetching || result.isFetchingNextPage) && <div>Loading...</div>}
+      </div>
+
+      <h1 style={{ marginTop: 40 }}>Vite + React + Typescript +++</h1>
       <div className="card">
         <button
           onClick={async () => {
@@ -43,11 +58,7 @@ export function App() {
         >
           count is {count}
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
     </div>
   );
 }

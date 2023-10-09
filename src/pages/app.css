@@ -1,3 +1,11 @@
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
 @keyframes logo-opacity {
   0% {
     opacity: 1;
@@ -10,6 +18,35 @@
   }
 }
 
-.animate-loading {
+.logo-animate-loading {
   animation: logo-opacity infinite 0.8s linear;
+}
+
+.app-container {
+  width: 960px;
+  min-height: calc(100vh - 100px);
+
+  margin: 0 auto;
+  padding: 0px;
+
+  background-color: #f3f7fa;
+}
+
+.logo-container {
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.filters {
+  width: 232px;
+  height: 252px;
+  flex-shrink: 0;
+}
+
+.panel-color-and-border {
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.1);
 }

@@ -47,20 +47,24 @@ export function App() {
   return (
     <>
       <style>{cssStyles}</style>
-      <div style={{ backgroundColor: '#F3F7FA', minHeight: 'calc(100vh - 100px)' }}>
+      <div className="app-container">
         <div style={{ height: 0 }}>&nbsp;</div>
-        <div
-          style={{ width: '100%', marginTop: '50px', display: 'flex', justifyContent: 'center' }}
-        >
+        <div className="logo-container">
           <img
             src={Logo}
             alt="Logo icon"
             height={'60px'}
-            className={isLoading ? 'animate-loading' : ''}
+            // className={isLoading ? 'logo-animate-loading' : ''}
           />
         </div>
+        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '50px' }}>
+          <div style={{ display: 'flex', gap: '20px' }}>
+            <div className="filters panel-color-and-border"></div>
+            <div className="filters panel-color-and-border"></div>
+          </div>
+        </div>
 
-        <h1 style={{ marginTop: 40 }}>Vite + React + Typescript +++</h1>
+        <h1 style={{ marginTop: 40, color: 'black' }}>Vite + React + Typescript +++</h1>
         <div className="card">
           <button
             onClick={async () => {

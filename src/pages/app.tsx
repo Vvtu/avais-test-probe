@@ -5,6 +5,7 @@ import Logo from '@/pages/icons/logo.svg';
 import { ITickets } from '@/services/ticket-validation-scheme';
 
 import cssStyles from './app.css?inline';
+import { TabsForSorting } from './tabs-for-sorting';
 
 export function App() {
   const [count, setCount] = useState(0);
@@ -60,7 +61,15 @@ export function App() {
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '50px' }}>
           <div style={{ display: 'flex', gap: '20px' }}>
             <div className="filters panel-color-and-border"></div>
-            <div className="filters panel-color-and-border"></div>
+            <div className="right-container">
+              <TabsForSorting />
+              <div className="panel-color-and-border" style={{ backgroundColor: 'aqua' }}>
+                2424232
+              </div>
+              <div className="panel-color-and-border">2424232</div>
+              <div className="panel-color-and-border">2424232</div>
+              <div className="panel-color-and-border">2424232</div>
+            </div>
           </div>
         </div>
 

@@ -27,8 +27,10 @@ export async function getTickets(systemId: string) {
   for (const ticket of ticketArray) {
     ticket.price = Math.trunc(Math.random() * 200 + 100) * 100;
     ticket.segments.forEach((elem) => {
-      elem.destination = elem.destination.slice(0, 3);
-      elem.origin = elem.origin.slice(0, 3);
+      elem.destination = elem.destination.slice(0, 3).toUpperCase();
+      elem.origin = elem.origin.slice(0, 3).toUpperCase();
+      elem.stops = elem.stops.slice(0, 4);
+      elem.stops = elem.stops.map((elem2) => elem2.slice(0, 3).toUpperCase());
     });
   }
 

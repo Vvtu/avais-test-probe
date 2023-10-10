@@ -28,5 +28,5 @@ export async function getTickets(systemId: string) {
     ticket.price = Math.random() * 2000 + 200;
   }
 
-  return Promise.resolve({ tickets: ticketArray, stop: Math.random() < 0.1 });
+  return Promise.resolve({ tickets: ticketArray, stop: Math.random() < 0.2 });
 }

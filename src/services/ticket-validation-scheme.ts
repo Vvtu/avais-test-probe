@@ -23,5 +23,5 @@ export const ticketValidationScheme = z.object({
   ),
 });
 
-export type ITickets = z.infer<typeof ticketValidationScheme>;
+export type ITicket = z.infer<typeof ticketValidationScheme>;
 //            ^?

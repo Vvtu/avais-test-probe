@@ -25,7 +25,7 @@ export async function getTickets(systemId: string) {
     generateMock(ticketValidationScheme),
   );
   for (const ticket of ticketArray) {
-    ticket.price = Math.random() * 2000 + 200;
+    ticket.price = Math.trunc(Math.random() * 200 + 100) * 100;
   }
 
   return Promise.resolve({ tickets: ticketArray, stop: Math.random() < 0.2 });

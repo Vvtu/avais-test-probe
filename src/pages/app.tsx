@@ -15,7 +15,7 @@ export function App() {
           <img src={Logo} alt="Logo icon" height="60px" width="60px" />
         </div>
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '50px' }}>
-          <div style={{ display: 'flex', gap: '20px' }}>
+          <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
             <TransferFilter />
             <div className="right-container">
               <TabsForSorting />

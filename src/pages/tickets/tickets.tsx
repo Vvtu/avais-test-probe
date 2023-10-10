@@ -40,7 +40,7 @@ export function Tickets() {
     });
   }, [allPages]);
 
-  const isLoading = result.isFetching || result.isFetchingNextPage;
+  // const isLoading = result.isFetching || result.isFetchingNextPage;
 
   console.log('[33m allPages = ', allPages); //TODO - delete vvtu
   console.log('[33m pagesSortedAndFiltered = ', pagesSortedAndFiltered); //TODO - delete vvtu
@@ -50,7 +50,8 @@ export function Tickets() {
   return (
     <>
       <style>{cssStyles}</style>
-      <div className={classNames('tickets-container', { 'animate-loading': isLoading })}>
+      {/* <div className={classNames('tickets-container', { 'animate-loading': isLoading })}> */}
+      <div className="tickets-container">
         {ticketsToShow.map((ticket) => (
           <OneTicket ticket={ticket} key={ticket.carrier} />
         ))}

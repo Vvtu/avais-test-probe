@@ -51,6 +51,16 @@ export function OneTicket({ ticket }: { ticket: ITicket }) {
           <div className="elem-width">В пути</div>
           <div className="elem-width">{ticket.segments[0].stops.join(', ')}</div>
         </div>
+        <div className="flex-row elem-gray margin-top-10">
+          <div className="elem-width">{`${ticket.segments[0].origin} - ${ticket.segments[0].destination}`}</div>
+          <div className="elem-width">В пути</div>
+          <div className="elem-width">{transferTextMessage(ticket.segments[0].stops)}</div>
+        </div>
+        <div className="flex-row elem-black">
+          <div className="elem-width">{`${ticket.segments[0].origin} - ${ticket.segments[0].destination}`}</div>
+          <div className="elem-width">В пути</div>
+          <div className="elem-width">{ticket.segments[0].stops.join(', ')}</div>
+        </div>
       </div>
     </>
   );

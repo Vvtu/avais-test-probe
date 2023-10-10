@@ -12,9 +12,9 @@ export function App() {
       <div className="app-container">
         <div style={{ height: 0 }}>&nbsp;</div>
         <div className="logo-container">
-          <img src={Logo} alt="Logo icon" height="60px" width="60px" />
+          <img src={Logo} alt="Logo icon" width="82" height="89" />
         </div>
-        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '50px' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '32px' }}>
           <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
             <TransferFilter />
             <div className="right-container">

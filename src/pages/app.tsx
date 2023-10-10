@@ -6,6 +6,7 @@ import { ITickets } from '@/services/ticket-validation-scheme';
 
 import cssStyles from './app.css?inline';
 import { TabsForSorting } from './tabs-for-sorting';
+import { TransferFilter } from './transfer-filter';
 
 export function App() {
   const [count, setCount] = useState(0);
@@ -60,7 +61,7 @@ export function App() {
         </div>
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '50px' }}>
           <div style={{ display: 'flex', gap: '20px' }}>
-            <div className="filters panel-color-and-border"></div>
+            <TransferFilter />
             <div className="right-container">
               <TabsForSorting />
               <div className="panel-color-and-border" style={{ backgroundColor: 'aqua' }}>

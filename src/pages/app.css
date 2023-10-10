@@ -39,12 +39,6 @@
   justify-content: center;
 }
 
-.filters {
-  width: 232px;
-  height: 252px;
-  flex-shrink: 0;
-}
-
 .panel-color-and-border {
   border-radius: 5px;
   background-color: #fff;

@@ -1,0 +1,33 @@
+.layout {
+  width: 232px;
+  flex-shrink: 0;
+  padding: 20px;
+}
+
+.header {
+  color: #4a4a4a;
+  font-family: Open Sans;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 12px; /* 100% */
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.item-container {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.item-text {
+  color: #4a4a4a;
+  font-family: Open Sans;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 153.846% */
+}

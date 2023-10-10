@@ -1,5 +1,7 @@
 import { useEffect, useMemo } from 'react';
 
+import classNames from 'classnames';
+
 import { useGetTickets } from '@/hooks/query-hooks';
 import { ITicket } from '@/services/ticket-validation-scheme';
 
@@ -43,13 +45,16 @@ export function Tickets() {
   console.log('[33m allPages = ', allPages); //TODO - delete vvtu
   console.log('[33m pagesSortedAndFiltered = ', pagesSortedAndFiltered); //TODO - delete vvtu
 
+  const ticketsToShow = pagesSortedAndFiltered?.slice(0, 5) ?? [];
+
   return (
     <>
       <style>{cssStyles}</style>
-      {pagesSortedAndFiltered[0] && <OneTicket ticket={pagesSortedAndFiltered[0]} />}
-      <div className="panel-color-and-border">2424232</div>
-      <div className="panel-color-and-border">2424232</div>
-      <div className="panel-color-and-border">2424232</div>
+      <div className={classNames('tickets-container', { 'animate-loading': isLoading })}>
+        {ticketsToShow.map((ticket) => (
+          <OneTicket ticket={ticket} key={ticket.carrier} />
+        ))}
+      </div>
     </>
   );
 }

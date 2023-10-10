@@ -1,4 +1,4 @@
-@keyframes logo-opacity {
+@keyframes animate-opacity {
   0% {
     opacity: 1;
   }
@@ -10,6 +10,12 @@
   }
 }
 
-.logo-animate-loading {
-  animation: logo-opacity infinite 0.8s linear;
+.animate-loading {
+  animation: animate-opacity infinite 0.8s linear;
+}
+
+.tickets-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }

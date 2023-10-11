@@ -1,6 +1,6 @@
 import { useSearchParams } from 'react-router-dom';
 
-import classNames from 'classname';
+import classNames from 'classnames';
 
 import { SORTING_PARAM, ISortingParam } from '@/app-constants';
 import { getNewSearcParams } from '@/utils/get-new-searc-params';

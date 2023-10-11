@@ -13,10 +13,8 @@ export function Tickets() {
   const [searchParams] = useSearchParams();
 
   const result = useGetTickets();
-  console.log('[31m ----------- result = ', result); //TODO - delete vvtu
 
   useEffect(() => {
-    console.log('[33m result.hasNextPage = ', result.hasNextPage); //TODO - delete vvtu
     if (result.hasNextPage) {
       result.fetchNextPage();
     }
@@ -26,7 +24,6 @@ export function Tickets() {
     const arr: ITicket[] = [];
 
     for (const page of result.data?.pages ?? []) {
-      console.log('[35m page = ', page); //TODO - delete vvtu
       arr.push(...page.tickets);
     }
 
@@ -89,9 +86,6 @@ export function Tickets() {
   }, [allPages, sortingParam, transferParam]);
 
   // const isLoading = result.isFetching || result.isFetchingNextPage;
-
-  console.log('[33m allPages = ', allPages); //TODO - delete vvtu
-  console.log('[33m pagesSortedAndFiltered = ', pagesSortedAndFiltered); //TODO - delete vvtu
 
   const ticketsToShow = pagesSortedAndFiltered?.slice(0, 5) ?? [];
 

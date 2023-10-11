@@ -28,8 +28,6 @@ function transferTextMessage(stops: unknown[]) {
 }
 
 export function OneTicket({ ticket }: { ticket: ITicket }) {
-  console.log('[35m OneTicket ticket = ', ticket); //TODO - delete vvtu
-
   const price = new Intl.NumberFormat('ru').format(ticket.price);
 
   return (

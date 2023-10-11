@@ -15,8 +15,6 @@ export const ShowMoreTickets = React.memo(function ({
   setShowMoreTicketsIndex: (n: number) => void;
   nextPageLength: number;
 }) {
-  console.log('[33m showMoreTicketsIndex = ', showMoreTicketsIndex); //TODO - delete vvtu
-
   function handleOnClick() {
     setShowMoreTicketsIndex(showMoreTicketsIndex + PAGE_SIZE);
   }
@@ -28,7 +26,7 @@ export const ShowMoreTickets = React.memo(function ({
         className={classNames('button-container', { disabled: nextPageLength <= 0 })}
         onClick={handleOnClick}
       >
-        {nextPageLength <= 0 ? 'Это все билеты' : `Показать еще ${nextPageLength} билетов!`}
+        {nextPageLength <= 0 ? 'Это всё. Больше нету' : `Показать еще ${nextPageLength} билетов!`}
       </button>
     </>
   );

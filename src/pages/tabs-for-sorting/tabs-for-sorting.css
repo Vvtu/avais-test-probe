@@ -1,15 +1,6 @@
-.right-container {
-  width: 502px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: stretch;
-  justify-content: flex-start;
-}
-
 .sort-tabs-group {
   flex-shrink: 0;
-  font-family: Open Sans;
+  font-family: 'Open Sans';
   font-size: 12px;
   font-style: normal;
   font-weight: 600;

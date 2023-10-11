@@ -40,12 +40,14 @@ export function TransferFilter() {
         <div className="header">Количество пересадок</div>
         {ITEMS.map(({ value, label }) => (
           <div key={label} className="item-container" onClick={() => handleItemClicked(value)}>
-            {transferParam === value ? (
-              <img src={checkIconChecked} alt="icon checked" width="20px" height="20px" />
-            ) : (
-              <img src={checkIconEmpty} alt="icon checked" width="20px" height="20px" />
-            )}
-            <div className="item-text">{label}</div>
+            <div className="item-sub-container">
+              {transferParam === value ? (
+                <img src={checkIconChecked} alt="icon checked" width="20px" height="20px" />
+              ) : (
+                <img src={checkIconEmpty} alt="icon checked" width="20px" height="20px" />
+              )}
+              <div className="item-text">{label}</div>
+            </div>
           </div>
         ))}
       </div>

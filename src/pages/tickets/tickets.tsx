@@ -1,15 +1,19 @@
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { useSearchParams } from 'react-router-dom';
 
+import { PAGE_SIZE } from '@/app-constants';
 import { SORTING_PARAM, TRANSFER_PARAM, ISortingParam } from '@/app-constants';
-import { useGetTickets } from '@/hooks/query-hooks';
+import { useGetTickets } from '@/pages/hooks/query-hooks';
 import { ITicket } from '@/services/ticket-validation-scheme';
+
+import { ShowMoreTickets } from '../show-more-tickets';
 
 import { OneTicket } from './one-ticket';
 import cssStyles from './tickets.css?inline';
 
 export function Tickets() {
+  const [showMoreTicketsIndex, setShowMoreTicketsIndex] = useState<number>(0);
   const [searchParams] = useSearchParams();
 
   const result = useGetTickets();
@@ -87,7 +91,13 @@ export function Tickets() {
 
   // const isLoading = result.isFetching || result.isFetchingNextPage;
 
-  const ticketsToShow = pagesSortedAndFiltered?.slice(0, 5) ?? [];
+  const ticketsToShow =
+    pagesSortedAndFiltered?.slice(showMoreTicketsIndex, showMoreTicketsIndex + PAGE_SIZE) ?? [];
+
+  const nextPageLength = Math.max(
+    0,
+    Math.min(PAGE_SIZE, pagesSortedAndFiltered.length - PAGE_SIZE - showMoreTicketsIndex),
+  );
 
   return (
     <>
@@ -98,6 +108,11 @@ export function Tickets() {
           <OneTicket ticket={ticket} key={ticket.carrier} />
         ))}
       </div>
+      <ShowMoreTickets
+        showMoreTicketsIndex={showMoreTicketsIndex}
+        setShowMoreTicketsIndex={setShowMoreTicketsIndex}
+        nextPageLength={nextPageLength}
+      />
     </>
   );
 }

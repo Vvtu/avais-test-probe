@@ -10,7 +10,7 @@ import { ITicket } from '@/services/ticket-validation-scheme';
 import { ShowMoreTickets } from '../show-more-tickets';
 
 import { OneTicket } from './one-ticket';
-import cssStyles from './tickets.css?inline';
+import cssStyles from './tickets.module.css';
 
 export function Tickets() {
   const [showMoreTicketsIndex, setShowMoreTicketsIndex] = useState<number>(0);
@@ -101,9 +101,8 @@ export function Tickets() {
 
   return (
     <>
-      <style>{cssStyles}</style>
       {/* <div className={classNames('ticketsContainer', { 'animateLoading': isLoading })}> */}
-      <div className="ticketsContainer">
+      <div className={cssStyles.ticketsContainer}>
         {ticketsToShow.map((ticket) => (
           <OneTicket ticket={ticket} key={ticket.carrier} />
         ))}

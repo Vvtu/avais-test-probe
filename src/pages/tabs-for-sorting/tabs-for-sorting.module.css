@@ -1,4 +1,4 @@
-.sort-tabs-group {
+.sortTabsGroup {
   flex-shrink: 0;
   font-family: 'Open Sans';
   font-size: 12px;
@@ -80,7 +80,7 @@
   background-color: #2196f3;
   border-radius: 0 5px 5px 0;
 }
-.active-lastTab:hover {
+.activeLastTab:hover {
   filter: brightness(0.9);
   color: #fff !important;
 }

@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import { SORTING_PARAM, ISortingParam } from '@/app-constants';
 import { getNewSearcParams } from '@/utils/get-new-searc-params';
 
-import cssStyles from './tabs-for-sorting.css?inline';
+import cssStyles from './tabs-for-sorting.module.css';
 
 export function TabsForSorting() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -35,9 +35,7 @@ export function TabsForSorting() {
 
   return (
     <>
-      <style>{cssStyles}</style>
-
-      <div className="sort-tabs-group">
+      <div className={cssStyles.sortTabsGroup}>
         <div
           className={classNames('firstTab', {
             activeFirstTab: sortingParam === ISortingParam.cheep,
@@ -47,7 +45,7 @@ export function TabsForSorting() {
           Самый дешевый
         </div>
         <div
-          className={classNames('middleTab', {
+          className={classNames(cssStyles.middleTab, {
             activeMiddleTab: sortingParam === ISortingParam.speed,
           })}
           onClick={() => handleTabClick(ISortingParam.speed)}
@@ -55,8 +53,8 @@ export function TabsForSorting() {
           Самый быстрый
         </div>
         <div
-          className={classNames('lastTab', {
-            'active-lastTab': sortingParam === ISortingParam.optimal,
+          className={classNames(cssStyles.lastTab, {
+            [cssStyles.activeLastTab]: sortingParam === ISortingParam.optimal,
           })}
           onClick={() => handleTabClick(ISortingParam.optimal)}
         >

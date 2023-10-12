@@ -8,6 +8,18 @@
   background-color: #f3f7fa;
 }
 
+.tickets-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.tickets-subcontainer {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
 .logo-container {
   width: 100%;
   margin-top: 32px;
@@ -28,4 +40,8 @@
   gap: 20px;
   align-items: flex-start;
   align-items: stretch;
+}
+
+.height0 {
+  height: 0;
 }

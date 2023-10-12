@@ -10,12 +10,12 @@ export function App() {
     <>
       <style>{cssStyles}</style>
       <div className="app-container">
-        <div style={{ height: 0 }}>&nbsp;</div>
+        <div className="height0">&nbsp;</div>
         <div className="logo-container">
           <img src={Logo} alt="Logo icon" width="82" height="89" />
         </div>
-        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '32px' }}>
-          <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
+        <div className="tickets-container">
+          <div className="tickets-subcontainer">
             <TransferFilter />
             <div className="right-container">
               <TabsForSorting />

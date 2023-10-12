@@ -1,4 +1,4 @@
-@keyframes animate-opacity {
+@keyframes animateOpacity {
   0% {
     opacity: 1;
   }
@@ -10,11 +10,11 @@
   }
 }
 
-.animate-loading {
-  animation: animate-opacity infinite 0.8s linear;
+.animateLoading {
+  animation: animateOpacity infinite 0.8s linear;
 }
 
-.tickets-container {
+.ticketsContainer {
   display: flex;
   flex-direction: column;
   gap: 20px;

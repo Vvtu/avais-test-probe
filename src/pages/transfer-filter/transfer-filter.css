@@ -17,25 +17,25 @@
   margin-bottom: 10px;
 }
 
-.item-container {
+.itemContainer {
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: stretch;
   padding: 0 20px;
 }
-.item-container:hover {
+.itemContainer:hover {
   background: #f1fcff;
 }
 
-.item-sub-container {
+.itemSubcontainer {
   display: flex;
   align-items: center;
   gap: 10px;
   cursor: pointer;
 }
 
-.item-text {
+.itemText {
   color: #4a4a4a;
   font-family: Open Sans;
   font-size: 13px;

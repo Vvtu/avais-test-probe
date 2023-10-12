@@ -23,7 +23,7 @@ export const ShowMoreTickets = React.memo(function ({
     <>
       <style>{cssStyles}</style>
       <button
-        className={classNames('button-container', { disabled: nextPageLength <= 0 })}
+        className={classNames('buttonContainer', { disabled: nextPageLength <= 0 })}
         onClick={handleOnClick}
       >
         {nextPageLength <= 0 ? 'Это всё. Больше нету' : `Показать еще ${nextPageLength} билетов!`}

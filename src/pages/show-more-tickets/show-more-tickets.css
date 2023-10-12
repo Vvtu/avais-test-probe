@@ -1,4 +1,4 @@
-.button-container {
+.buttonContainer {
   height: 50px;
   width: 100%;
   display: flex;
@@ -20,7 +20,7 @@
   text-transform: uppercase;
 }
 
-.button-container:hover {
+.buttonContainer:hover {
   filter: brightness(0.9);
 }
 

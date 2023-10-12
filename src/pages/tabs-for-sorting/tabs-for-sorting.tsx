@@ -39,24 +39,24 @@ export function TabsForSorting() {
 
       <div className="sort-tabs-group">
         <div
-          className={classNames('first-tab', {
-            'active-first-tab': sortingParam === ISortingParam.cheep,
+          className={classNames('firstTab', {
+            activeFirstTab: sortingParam === ISortingParam.cheep,
           })}
           onClick={() => handleTabClick(ISortingParam.cheep)}
         >
           Самый дешевый
         </div>
         <div
-          className={classNames('middle-tab', {
-            'active-middle-tab': sortingParam === ISortingParam.speed,
+          className={classNames('middleTab', {
+            activeMiddleTab: sortingParam === ISortingParam.speed,
           })}
           onClick={() => handleTabClick(ISortingParam.speed)}
         >
           Самый быстрый
         </div>
         <div
-          className={classNames('last-tab', {
-            'active-last-tab': sortingParam === ISortingParam.optimal,
+          className={classNames('lastTab', {
+            'active-lastTab': sortingParam === ISortingParam.optimal,
           })}
           onClick={() => handleTabClick(ISortingParam.optimal)}
         >

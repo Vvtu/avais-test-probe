@@ -102,8 +102,8 @@ export function Tickets() {
   return (
     <>
       <style>{cssStyles}</style>
-      {/* <div className={classNames('tickets-container', { 'animate-loading': isLoading })}> */}
-      <div className="tickets-container">
+      {/* <div className={classNames('ticketsContainer', { 'animateLoading': isLoading })}> */}
+      <div className="ticketsContainer">
         {ticketsToShow.map((ticket) => (
           <OneTicket ticket={ticket} key={ticket.carrier} />
         ))}

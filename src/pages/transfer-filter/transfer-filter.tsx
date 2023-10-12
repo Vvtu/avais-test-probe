@@ -38,18 +38,17 @@ export function TransferFilter() {
   return (
     <>
       <style>{cssStyles}</style>
-
-      <div className={classNames('layout', panelStyles['panel-color-and-border'])}>
+      <div className={classNames('layout', panelStyles.panelColorAndBorder)}>
         <div className="header">Количество пересадок</div>
         {ITEMS.map(({ value, label }) => (
-          <div key={label} className="item-container" onClick={() => handleItemClicked(value)}>
-            <div className="item-sub-container">
+          <div key={label} className="itemContainer" onClick={() => handleItemClicked(value)}>
+            <div className="itemSubcontainer">
               {transferParam === value ? (
                 <img src={checkIconChecked} alt="icon checked" width="20px" height="20px" />
               ) : (
                 <img src={checkIconEmpty} alt="icon checked" width="20px" height="20px" />
               )}
-              <div className="item-text">{label}</div>
+              <div className="itemText">{label}</div>
             </div>
           </div>
         ))}

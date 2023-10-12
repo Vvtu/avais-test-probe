@@ -8,15 +8,15 @@ import { TransferFilter } from './transfer-filter';
 export function App() {
   return (
     <>
-      <div className={cssStyles['app-container']}>
+      <div className={cssStyles['appContainer']}>
         <div className={cssStyles.height0}>&nbsp;</div>
         <div className={cssStyles['logo-container']}>
           <img src={Logo} alt="Logo icon" width="82" height="89" />
         </div>
-        <div className={cssStyles['tickets-container']}>
-          <div className={cssStyles['tickets-subcontainer']}>
+        <div className={cssStyles['ticketsContainer']}>
+          <div className={cssStyles['ticketsSubcontainer']}>
             <TransferFilter />
-            <div className={cssStyles['right-container']}>
+            <div className={cssStyles['rightContainer']}>
               <TabsForSorting />
               <Tickets />
             </div>

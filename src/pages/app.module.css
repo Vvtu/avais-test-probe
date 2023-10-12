@@ -1,4 +1,4 @@
-.app-container {
+.appContainer {
   width: 960px;
   min-height: calc(100vh - 100px);
 
@@ -8,26 +8,19 @@
   background-color: #f3f7fa;
 }
 
-.tickets-container {
+.ticketsContainer {
   display: flex;
   justify-content: center;
   margin-top: 32px;
 }
 
-.tickets-subcontainer {
+.ticketsSubcontainer {
   display: flex;
   gap: 20px;
   align-items: flex-start;
 }
 
-.logo-container {
-  width: 100%;
-  margin-top: 32px;
-  display: flex;
-  justify-content: center;
-}
-
-.right-container {
+.rightContainer {
   width: 502px;
   display: flex;
   flex-direction: column;

@@ -36,7 +36,7 @@ export function TransferFilter() {
   }
 
   return (
-    <div className={classNames('layout', panelStyles.panelColorAndBorder)}>
+    <div className={classNames(cssStyles.layout, panelStyles.panelColorAndBorder)}>
       <div className={cssStyles.header}>Количество пересадок</div>
       {ITEMS.map(({ value, label }) => (
         <div

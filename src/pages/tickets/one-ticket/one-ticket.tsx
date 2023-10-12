@@ -35,7 +35,7 @@ export function OneTicket({ ticket }: { ticket: ITicket }) {
 
   return (
     <>
-      <div className={classNames(panelStyles.panelColorAndBorder, 'ticket-layout')}>
+      <div className={classNames(panelStyles.panelColorAndBorder, cssStyles.ticketLayout)}>
         <div className={cssStyles.flexRowSpaceBetween}>
           <div className={cssStyles.price}>{`${price} Р`}</div>
           <img src={ticketLogoIcon} alt="Company Logo" width={'110px'} height={'36px'} />

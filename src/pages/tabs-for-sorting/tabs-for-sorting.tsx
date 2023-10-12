@@ -37,7 +37,7 @@ export function TabsForSorting() {
     <>
       <div className={cssStyles.sortTabsGroup}>
         <div
-          className={classNames('firstTab', {
+          className={classNames(cssStyles.firstTab, {
             activeFirstTab: sortingParam === ISortingParam.cheep,
           })}
           onClick={() => handleTabClick(ISortingParam.cheep)}

@@ -8,6 +8,13 @@
   background-color: #f3f7fa;
 }
 
+.logoContainer {
+  width: 100%;
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+}
+
 .ticketsContainer {
   display: flex;
   justify-content: center;

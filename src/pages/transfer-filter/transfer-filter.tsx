@@ -1,6 +1,9 @@
 import { useSearchParams } from 'react-router-dom';
 
+import classNames from 'classnames';
+
 import { TRANSFER_PARAM } from '@/app-constants';
+import panelStyles from '@/pages/panel.module.css';
 import { getNewSearcParams } from '@/utils/get-new-searc-params';
 
 import checkIconChecked from './check-icon-checked.svg';
@@ -36,7 +39,7 @@ export function TransferFilter() {
     <>
       <style>{cssStyles}</style>
 
-      <div className="layout panel-color-and-border">
+      <div className={classNames('layout', panelStyles['panel-color-and-border'])}>
         <div className="header">Количество пересадок</div>
         {ITEMS.map(({ value, label }) => (
           <div key={label} className="item-container" onClick={() => handleItemClicked(value)}>

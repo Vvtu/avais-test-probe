@@ -1,3 +1,6 @@
+import classNames from 'classnames';
+
+import panelStyles from '@/pages/panel.module.css';
 import { ITicket } from '@/services/ticket-validation-scheme';
 
 import cssStyles from './one-ticket.css?inline';
@@ -34,7 +37,7 @@ export function OneTicket({ ticket }: { ticket: ITicket }) {
     <>
       <style>{cssStyles}</style>
 
-      <div className="panel-color-and-border ticket-layout">
+      <div className={classNames(panelStyles['panel-color-and-border'], 'ticket-layout')}>
         <div className="flex-row-space-between">
           <div className="price">{`${price} Р`}</div>
           <img src={ticketLogoIcon} alt="Company Logo" width={'110px'} height={'36px'} />

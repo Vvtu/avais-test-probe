@@ -27,12 +27,6 @@
   justify-content: center;
 }
 
-.panel-color-and-border {
-  border-radius: 5px;
-  background-color: #fff;
-  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.1);
-}
-
 .right-container {
   width: 502px;
   display: flex;

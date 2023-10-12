@@ -1,4 +1,4 @@
-.app-container {
+.appContainer {
   width: 960px;
   min-height: calc(100vh - 100px);
 
@@ -8,24 +8,34 @@
   background-color: #f3f7fa;
 }
 
-.logo-container {
+.logoContainer {
   width: 100%;
   margin-top: 32px;
   display: flex;
   justify-content: center;
 }
 
-.panel-color-and-border {
-  border-radius: 5px;
-  background-color: #fff;
-  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.1);
+.ticketsContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
 }
 
-.right-container {
+.ticketsSubcontainer {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.rightContainer {
   width: 502px;
   display: flex;
   flex-direction: column;
   gap: 20px;
   align-items: flex-start;
   align-items: stretch;
+}
+
+.height0 {
+  height: 0;
 }

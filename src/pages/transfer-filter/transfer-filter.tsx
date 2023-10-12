@@ -1,11 +1,14 @@
 import { useSearchParams } from 'react-router-dom';
 
+import classNames from 'classnames';
+
 import { TRANSFER_PARAM } from '@/app-constants';
+import panelStyles from '@/pages/panel.module.css';
 import { getNewSearcParams } from '@/utils/get-new-searc-params';
 
 import checkIconChecked from './check-icon-checked.svg';
 import checkIconEmpty from './check-icon-empty.svg';
-import cssStyles from './transfer-filter.css?inline';
+import cssStyles from './transfer-filter.module.css';
 
 const ITEMS = [
   { value: -1, label: 'Все' },
@@ -33,24 +36,24 @@ export function TransferFilter() {
   }
 
   return (
-    <>
-      <style>{cssStyles}</style>
-
-      <div className="layout panel-color-and-border">
-        <div className="header">Количество пересадок</div>
-        {ITEMS.map(({ value, label }) => (
-          <div key={label} className="item-container" onClick={() => handleItemClicked(value)}>
-            <div className="item-sub-container">
-              {transferParam === value ? (
-                <img src={checkIconChecked} alt="icon checked" width="20px" height="20px" />
-              ) : (
-                <img src={checkIconEmpty} alt="icon checked" width="20px" height="20px" />
-              )}
-              <div className="item-text">{label}</div>
-            </div>
+    <div className={classNames(cssStyles.layout, panelStyles.panelColorAndBorder)}>
+      <div className={cssStyles.header}>Количество пересадок</div>
+      {ITEMS.map(({ value, label }) => (
+        <div
+          key={label}
+          className={cssStyles.itemContainer}
+          onClick={() => handleItemClicked(value)}
+        >
+          <div className={cssStyles.itemSubcontainer}>
+            {transferParam === value ? (
+              <img src={checkIconChecked} alt="icon checked" width="20px" height="20px" />
+            ) : (
+              <img src={checkIconEmpty} alt="icon checked" width="20px" height="20px" />
+            )}
+            <div className={cssStyles.itemText}>{label}</div>
           </div>
-        ))}
-      </div>
-    </>
+        </div>
+      ))}
+    </div>
   );
 }

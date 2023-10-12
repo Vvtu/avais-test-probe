@@ -1,6 +1,6 @@
 import Logo from '@/pages/icons/logo.svg';
 
-import cssStyles from './app.css?inline';
+import cssStyles from './app.module.css';
 import { TabsForSorting } from './tabs-for-sorting';
 import { Tickets } from './tickets';
 import { TransferFilter } from './transfer-filter';
@@ -8,16 +8,15 @@ import { TransferFilter } from './transfer-filter';
 export function App() {
   return (
     <>
-      <style>{cssStyles}</style>
-      <div className="app-container">
-        <div style={{ height: 0 }}>&nbsp;</div>
-        <div className="logo-container">
+      <div className={cssStyles.appContainer}>
+        <div className={cssStyles.height0}>&nbsp;</div>
+        <div className={cssStyles.logoContainer}>
           <img src={Logo} alt="Logo icon" width="82" height="89" />
         </div>
-        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '32px' }}>
-          <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
+        <div className={cssStyles['ticketsContainer']}>
+          <div className={cssStyles['ticketsSubcontainer']}>
             <TransferFilter />
-            <div className="right-container">
+            <div className={cssStyles['rightContainer']}>
               <TabsForSorting />
               <Tickets />
             </div>

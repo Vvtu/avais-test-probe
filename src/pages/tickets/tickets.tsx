@@ -1,22 +1,24 @@
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { useSearchParams } from 'react-router-dom';
 
+import { PAGE_SIZE } from '@/app-constants';
 import { SORTING_PARAM, TRANSFER_PARAM, ISortingParam } from '@/app-constants';
-import { useGetTickets } from '@/hooks/query-hooks';
+import { useGetTickets } from '@/pages/hooks/query-hooks';
 import { ITicket } from '@/services/ticket-validation-scheme';
 
+import { ShowMoreTickets } from '../show-more-tickets';
+
 import { OneTicket } from './one-ticket';
-import cssStyles from './tickets.css?inline';
+import cssStyles from './tickets.module.css';
 
 export function Tickets() {
+  const [showMoreTicketsIndex, setShowMoreTicketsIndex] = useState<number>(0);
   const [searchParams] = useSearchParams();
 
   const result = useGetTickets();
-  console.log('[31m ----------- result = ', result); //TODO - delete vvtu
 
   useEffect(() => {
-    console.log('[33m result.hasNextPage = ', result.hasNextPage); //TODO - delete vvtu
     if (result.hasNextPage) {
       result.fetchNextPage();
     }
@@ -26,7 +28,6 @@ export function Tickets() {
     const arr: ITicket[] = [];
 
     for (const page of result.data?.pages ?? []) {
-      console.log('[35m page = ', page); //TODO - delete vvtu
       arr.push(...page.tickets);
     }
 
@@ -90,20 +91,27 @@ export function Tickets() {
 
   // const isLoading = result.isFetching || result.isFetchingNextPage;
 
-  console.log('[33m allPages = ', allPages); //TODO - delete vvtu
-  console.log('[33m pagesSortedAndFiltered = ', pagesSortedAndFiltered); //TODO - delete vvtu
+  const ticketsToShow =
+    pagesSortedAndFiltered?.slice(showMoreTicketsIndex, showMoreTicketsIndex + PAGE_SIZE) ?? [];
 
-  const ticketsToShow = pagesSortedAndFiltered?.slice(0, 5) ?? [];
+  const nextPageLength = Math.max(
+    0,
+    Math.min(PAGE_SIZE, pagesSortedAndFiltered.length - PAGE_SIZE - showMoreTicketsIndex),
+  );
 
   return (
     <>
-      <style>{cssStyles}</style>
-      {/* <div className={classNames('tickets-container', { 'animate-loading': isLoading })}> */}
-      <div className="tickets-container">
+      {/* <div className={classNames('ticketsContainer', { 'animateLoading': isLoading })}> */}
+      <div className={cssStyles.ticketsContainer}>
         {ticketsToShow.map((ticket) => (
           <OneTicket ticket={ticket} key={ticket.carrier} />
         ))}
       </div>
+      <ShowMoreTickets
+        showMoreTicketsIndex={showMoreTicketsIndex}
+        setShowMoreTicketsIndex={setShowMoreTicketsIndex}
+        nextPageLength={nextPageLength}
+      />
     </>
   );
 }

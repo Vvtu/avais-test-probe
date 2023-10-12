@@ -11,3 +11,5 @@ export enum ISortingParam {
   speed = 'speed',
   optimal = 'optimal',
 }
+
+export const PAGE_SIZE = 5;

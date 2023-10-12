@@ -1,8 +1,8 @@
-.ticket-layout {
+.ticketLayout {
   padding: 20px;
 }
 
-.flex-row-space-between {
+.flexRowSpaceBetween {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -17,17 +17,17 @@
   line-height: 24px; /* 100% */
 }
 
-.flex-row {
+.flexRow {
   width: 100%;
   display: flex;
   align-items: center;
 }
 
-.elem-width {
+.elemWidth {
   width: 33.33%;
 }
 
-.elem-gray {
+.elemGray {
   color: #a0b0b9;
   font-family: Open Sans;
   font-size: 12px;
@@ -38,7 +38,7 @@
   text-transform: uppercase;
 }
 
-.elem-black {
+.elemBlack {
   color: #4a4a4a;
   font-family: Open Sans;
   font-size: 14px;
@@ -47,9 +47,9 @@
   line-height: 21px; /* 150% */
 }
 
-.margin-top-20 {
+.marginTop20 {
   margin-top: 20px;
 }
-.margin-top-10 {
+.marginTop10 {
   margin-top: 10px;
 }

@@ -1,4 +1,4 @@
-.sort-tabs-group {
+.sortTabsGroup {
   flex-shrink: 0;
   font-family: 'Open Sans';
   font-size: 12px;
@@ -15,7 +15,7 @@
   border-radius: 5px;
 }
 
-.first-tab {
+.firstTab {
   height: 50px;
   width: 33.33%;
   color: #4a4a4a;
@@ -25,10 +25,10 @@
   justify-content: center;
   cursor: pointer;
 }
-.first-tab:hover {
+.firstTab:hover {
   color: #2196f3;
 }
-.middle-tab {
+.middleTab {
   height: 50px;
   width: 33.33%;
   color: #4a4a4a;
@@ -40,10 +40,10 @@
   justify-content: center;
   cursor: pointer;
 }
-.middle-tab:hover {
+.middleTab:hover {
   color: #2196f3;
 }
-.last-tab {
+.lastTab {
   height: 50px;
   width: 33.33%;
 
@@ -54,33 +54,33 @@
   justify-content: center;
   cursor: pointer;
 }
-.last-tab:hover {
+.lastTab:hover {
   color: #2196f3;
 }
 
-.active-first-tab {
+.activeFirstTab {
   color: #fff;
   background-color: #2196f3;
   border-radius: 5px 0 0 5px;
 }
-.active-first-tab:hover {
+.activeFirstTab:hover {
   filter: brightness(0.9);
   color: #fff !important;
 }
-.active-middle-tab {
+.activeMiddleTab {
   color: #fff;
   background-color: #2196f3;
 }
-.active-middle-tab:hover {
+.activeMiddleTab:hover {
   filter: brightness(0.9);
   color: #fff !important;
 }
-.active-last-tab {
+.activeLastTab {
   color: #fff;
   background-color: #2196f3;
   border-radius: 0 5px 5px 0;
 }
-.active-last-tab:hover {
+.activeLastTab:hover {
   filter: brightness(0.9);
   color: #fff !important;
 }
